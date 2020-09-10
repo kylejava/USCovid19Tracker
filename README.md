@@ -1,4 +1,4 @@
-# USCovid19Tracker
+# US Covid19 Tracker
 
 A new Flutter application.
 

@@ -20,6 +20,12 @@ class _LoadingState extends State<Loading> {
     Navigator.pushReplacementNamed(context, '/display' , arguments: {
       'InitialOfState' : data[ChosenState['index']]['state'],
       'NameOfState': ChosenState['nameOfState'],
+      'TotalCases': data[ChosenState['index']]['total'],
+      'NegativeCases': data[ChosenState['index']]['negative'],
+      'PositiveCases': data[ChosenState['index']]['positive'],
+      'TotalDeaths': data[ChosenState['index']]['death'],
+      'LastUpdated': data[ChosenState['index']]['lastUpdateEt'],
+
     });
   }
 

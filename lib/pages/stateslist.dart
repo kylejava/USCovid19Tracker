@@ -22,7 +22,14 @@ class _ListOfStatesState extends State<ListOfStates> {
         itemCount: InitialsOfStates.length,
         itemBuilder: (context, index){
           return ListTile(
-            title: Text('${NamesOfStates[index]}'),
+            title: Text(
+                '${NamesOfStates[index]}',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25.0
+                  ),
+
+            ),
             trailing: RaisedButton.icon(
 
                 onPressed: () {

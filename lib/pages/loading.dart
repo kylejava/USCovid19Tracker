@@ -10,15 +10,16 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  Map index = {};
-  var i = 0;
+  Map ChosenState = {}; //Contains the name of the state the user has chosen, along with the index so it can be used for the api
+
 
   void GoToNextScreen() async {
     Response  response = await get('https://api.covidtracking.com/v1/states/current.json');
    List data = jsonDecode(response.body);
 
     Navigator.pushReplacementNamed(context, '/display' , arguments: {
-      'state' : data[index['index']]['state'],
+      'InitialOfState' : data[ChosenState['index']]['state'],
+      'NameOfState': ChosenState['nameOfState'],
     });
   }
 
@@ -34,8 +35,8 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
 
-    index = ModalRoute.of(context).settings.arguments;
-    i = index['index'];
+   ChosenState = ModalRoute.of(context).settings.arguments;
+
 
 
     return Scaffold(

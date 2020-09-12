@@ -22,15 +22,20 @@ class _ListOfStatesState extends State<ListOfStates> {
         itemCount: InitialsOfStates.length,
         itemBuilder: (context, index){
           return ListTile(
-            title: Text('${InitialsOfStates[index]}'),
+            title: Text('${NamesOfStates[index]}'),
             trailing: RaisedButton.icon(
+
                 onPressed: () {
+
                   Navigator.pushReplacementNamed(context, '/loading', arguments: {
                     'index' : index,
+                    'nameOfState': NamesOfStates[index],
                   });
 
                 },
-                icon: Icon(Icons.arrow_forward),
+                icon: Icon(
+                    Icons.arrow_forward,
+                ),
                 label: Text(''),
             ),
 

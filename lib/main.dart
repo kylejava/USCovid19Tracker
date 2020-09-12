@@ -3,6 +3,7 @@ import 'package:us_covid_tracker/pages/loading.dart';
 import 'package:us_covid_tracker/pages/state.dart';
 import 'package:us_covid_tracker/pages/stateslist.dart';
 import 'package:us_covid_tracker/pages/home.dart';
+import 'package:us_covid_tracker/pages/info.dart';
 void main() {
   runApp(MyApp());
 }
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         '/loading': (context) => Loading(),
         '/list': (context) => ListOfStates(),
         '/display': (context) => DisplayState(),
+        '/info' : (context) => Info(),
       },
     );
   }

@@ -9,7 +9,7 @@ class DisplayState extends StatefulWidget {
 
 class _DisplayStateState extends State<DisplayState> {
 
-  Map stat = {};
+  Map stat = {}; //This holds all the stats of the state: the name, the positive cases, total cases, deaths, etc.
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class _DisplayStateState extends State<DisplayState> {
 
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
+
           children: [
             FlatButton.icon(
                 onPressed: () {
@@ -30,11 +31,23 @@ class _DisplayStateState extends State<DisplayState> {
               label: Text('')
 
             ),
+            Center(
+              child: Text(
+                'Covid-19 Statistics',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
           ],
         ),
       ),
       body: Center(
-        child: Text(stat['state']),
+        child: Text(
+            stat['NameOfState'] + ' (' + stat['InitialOfState']+ ')',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0,
+            ),
+        ),
       ),
     );
   }

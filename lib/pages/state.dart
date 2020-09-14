@@ -56,7 +56,7 @@ class _DisplayStateState extends State<DisplayState> {
             ),
             Divider(thickness: 2.5,),
 
-            SizedBox(height: 50.0,),
+            SizedBox(height: 70.0,),
             Text( // Total Cases
               'Total Cases',
               style: TextStyle(
@@ -90,7 +90,7 @@ class _DisplayStateState extends State<DisplayState> {
 
             SizedBox(height: 20.0,),
             Text( // Total Deaths
-              'Deaths in ' + stat['InitialOfState'] ,
+              'Deaths in ' + stat['NameOfState'] ,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30.0,
@@ -103,13 +103,18 @@ class _DisplayStateState extends State<DisplayState> {
                 fontSize: 25.0,
               ),
             ),
-
+        
             SizedBox(height: 50.0,),
-            Text( // Last Updated
-              'Last Updated: ' + stat['LastUpdated'] +' EST',
-              style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontSize: 20.0,
+            Expanded(
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: Text( // Last Updated
+                  'Last Updated: ' + stat['LastUpdated'] +' EST',
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontSize: 20.0,
+                  ),
+                ),
               ),
             ),
           ],

@@ -17,6 +17,20 @@ class _ListOfStatesState extends State<ListOfStates> {
       appBar: AppBar(
         title: Text('Select A State'),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right:20.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/info');
+              },
+              child: Icon(
+                Icons.info_outline,
+
+              ),
+            ),
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: InitialsOfStates.length,
